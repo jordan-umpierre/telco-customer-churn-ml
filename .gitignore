@@ -22,6 +22,10 @@ env/
 .env.*
 .ipynb_checkpoints/
 
+# Local datasets and generated outputs
+data/*.csv
+outputs/*.csv
+
 # Editor and OS files
 .idea/
 .vscode/

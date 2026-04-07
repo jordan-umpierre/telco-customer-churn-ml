@@ -1,6 +1,6 @@
 # Telco Customer Churn Prediction
 
-> Portfolio note: Before sharing this repository publicly, confirm you have the right to redistribute any included datasets and project materials.
+> Portfolio note: This repository contains the project code and documentation. The raw Kaggle dataset and generated CSV outputs are intentionally not redistributed.
 
 ## Overview
 
@@ -16,20 +16,31 @@ The project demonstrates a practical end-to-end workflow:
 - Use a stratified train/test split to preserve churn balance
 - Tune Logistic Regression hyperparameters with `GridSearchCV`
 - Evaluate the final model with Accuracy, Precision, Recall, F1 score, and a classification report
-- Export a fully preprocessed dataset for review
+- Export a fully preprocessed dataset locally for review
 
 ## Project Structure
 
 ```text
 .
 |-- data/
-|   `-- WA_Fn-UseC_-Telco-Customer-Churn.csv
+|   `-- README.md
 |-- outputs/
-|   `-- preprocessed_telco_churn.csv
+|   `-- README.md
 |-- src/
 |   `-- main.py
+|-- LICENSE
 |-- README.md
 `-- requirements.txt
+```
+
+## Dataset
+
+The source dataset is [Telco Customer Churn by BlastChar on Kaggle](https://www.kaggle.com/datasets/blastchar/telco-customer-churn). Kaggle describes the dataset as customer churn data for customer retention modeling and lists the data license as "Data files copyright Original Authors."
+
+Because the dataset license is not a standard permissive software license, the CSV is not included in this repository. Download the dataset from Kaggle and place the file here:
+
+```text
+data/WA_Fn-UseC_-Telco-Customer-Churn.csv
 ```
 
 ## Requirements
@@ -48,7 +59,7 @@ pip install -r requirements.txt
 
 ## How to Run
 
-From the project root, confirm the dataset exists at:
+From the project root, confirm the Kaggle dataset file exists at:
 
 ```text
 data/WA_Fn-UseC_-Telco-Customer-Churn.csv
@@ -62,9 +73,15 @@ python src/main.py
 
 The script prints model tuning results, cross-validation accuracy, test-set evaluation metrics, target distributions, and output file location.
 
+Running the script generates:
+
+```text
+outputs/preprocessed_telco_churn.csv
+```
+
 ## Verified Results
 
-The project was verified locally with Python 3.14.3. The tuned Logistic Regression model selected these parameters:
+The project was verified locally with Python 3.14.3 using the Kaggle dataset. The tuned Logistic Regression model selected these parameters:
 
 ```text
 {'C': 1.0, 'class_weight': 'balanced', 'solver': 'lbfgs'}
@@ -101,9 +118,13 @@ Built an end-to-end customer churn prediction pipeline in Python using pandas an
 
 ## GitHub Readiness
 
-This project is suitable for a portfolio repository after confirming the included dataset and materials can be redistributed.
+This project is suitable for a public portfolio repository because it does not redistribute the raw dataset or generated data outputs.
 
 Recommended cleanup before publishing:
 
 - Do not commit local virtual environments, cache files, or editor workspace state.
 - Add a short project description to the repository landing page.
+
+## License
+
+The project code is licensed under the MIT License. The dataset is provided separately by the original authors through Kaggle and is not covered by this repository's license.
