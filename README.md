@@ -6,17 +6,18 @@
 
 This project builds a supervised machine learning pipeline to predict customer churn from the Telco Customer Churn dataset. The model classifies whether a customer is likely to churn based on demographic, account, and service-related features.
 
-The project demonstrates a practical end-to-end workflow:
+## What It Demonstrates
 
-- Load and validate the source dataset
-- Clean semi-numeric fields such as `TotalCharges`
-- Handle missing values
-- Encode categorical features with one-hot encoding
-- Scale numeric features with standardization
-- Use a stratified train/test split to preserve churn balance
-- Tune Logistic Regression hyperparameters with `GridSearchCV`
-- Evaluate the final model with Accuracy, Precision, Recall, F1 score, and a classification report
-- Export a fully preprocessed dataset locally for review
+- Data loading and validation for a real-world CSV dataset
+- Cleaning semi-numeric fields such as `TotalCharges`
+- Missing-value handling for numeric and categorical columns
+- One-hot encoding for categorical features
+- Standardization for numeric features
+- Stratified train/test splitting to preserve churn balance
+- Leakage-aware preprocessing fitted only on training data
+- Logistic Regression hyperparameter tuning with `GridSearchCV`
+- Evaluation with Accuracy, Precision, Recall, F1 score, and a classification report
+- Local export of the fully preprocessed dataset for review
 
 ## Project Structure
 
@@ -45,11 +46,11 @@ data/WA_Fn-UseC_-Telco-Customer-Churn.csv
 
 ## Requirements
 
-- Python 3.10 or newer
+- Python 3.10+
 - pip
 - pandas
 - numpy
-- scikit-learn 1.2 or newer
+- scikit-learn 1.2+
 
 Install dependencies from the project root:
 
@@ -71,6 +72,12 @@ Then run:
 python src/main.py
 ```
 
+If your system uses `python3` instead of `python`:
+
+```bash
+python3 src/main.py
+```
+
 The script prints model tuning results, cross-validation accuracy, test-set evaluation metrics, target distributions, and output file location.
 
 Running the script generates:
@@ -78,6 +85,8 @@ Running the script generates:
 ```text
 outputs/preprocessed_telco_churn.csv
 ```
+
+Generated output files are intentionally kept out of version control.
 
 ## Verified Results
 
@@ -112,18 +121,13 @@ The main application flow is implemented in `src/main.py`:
 8. Evaluate the selected model on the holdout test set.
 9. Export the combined preprocessed dataset to `outputs/preprocessed_telco_churn.csv`.
 
+## Portfolio Notes
+
+This project is suitable for a public portfolio repository because it does not redistribute the raw Kaggle dataset or generated data outputs. The repository includes placeholder README files in `data/` and `outputs/` so reviewers understand where local-only files belong.
+
 ## Resume Bullet
 
 Built an end-to-end customer churn prediction pipeline in Python using pandas and scikit-learn, including leakage-aware preprocessing, one-hot encoding, feature scaling, stratified train/test splitting, Logistic Regression, 5-fold cross-validation, and GridSearchCV hyperparameter tuning; achieved 0.78 recall for churn detection on the holdout test set.
-
-## GitHub Readiness
-
-This project is suitable for a public portfolio repository because it does not redistribute the raw dataset or generated data outputs.
-
-Recommended cleanup before publishing:
-
-- Do not commit local virtual environments, cache files, or editor workspace state.
-- Add a short project description to the repository landing page.
 
 ## License
 
