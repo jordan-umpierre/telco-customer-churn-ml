@@ -166,10 +166,6 @@ The main application flow is implemented in `src/main.py`:
 
 This project is suitable for a public portfolio repository because it does not redistribute the raw Kaggle dataset or generated data outputs. The repository also includes a small synthetic demo dataset so recruiters and reviewers can run the code immediately before deciding whether to download the full Kaggle data.
 
-## Resume Bullet
-
-Built an end-to-end customer churn prediction pipeline in Python using pandas and scikit-learn, including leakage-aware preprocessing, one-hot encoding, feature scaling, stratified train/test splitting, Logistic Regression, 5-fold cross-validation, and GridSearchCV hyperparameter tuning; achieved 0.78 recall for churn detection on the holdout test set.
-
 ## License
 
 The project code is licensed under the MIT License. The dataset is provided separately by the original authors through Kaggle and is not covered by this repository's license.
