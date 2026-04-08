@@ -24,6 +24,7 @@ env/
 
 # Local datasets and generated outputs
 data/*.csv
+!data/demo_telco_churn.csv
 outputs/*.csv
 
 # Editor and OS files
